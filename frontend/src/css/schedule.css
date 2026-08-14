@@ -1,0 +1,44 @@
+.availableDates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 10px;
+  background: url('/admin.png');
+  background-position: center;
+}
+
+.availableDates .date {
+  border: 2px solid #ccc;
+  min-height: 100px;
+  background-color: rgb(255, 255, 255, 0.8);
+  font-size: larger;
+}
+
+.availableDates .date.unavailable {
+  background-color: #9d9d9d;
+  color: #ffffff;
+  padding: 5px;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 10px;
+}
+
+.days .day {
+  font-size: larger;
+  text-align: center;
+}
+
+.appointments {
+  font-size: small;
+  color: black;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 1rem;
+  max-width: 400px;
+  min-width: 250px;
+  padding: 1rem;
+}
