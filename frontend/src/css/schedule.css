@@ -1,9 +1,37 @@
+.schedule {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(45deg, rgb(215, 215, 215), rgb(171, 171, 171));
+  min-height: 100vh;
+}
+
+header {
+  padding: 1rem;
+  height: fit-content;
+}
+
+header a {
+  height: fit-content;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: larger;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .availableDates {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   padding: 10px;
-  background: url('/admin.png');
   background-position: center;
+  width: 100vw;
+}
+
+.calendar {
+  overflow-x: scroll;
 }
 
 .availableDates .date {
@@ -11,10 +39,22 @@
   min-height: 100px;
   background-color: rgb(255, 255, 255, 0.8);
   font-size: larger;
+  min-width: 150px;
 }
 
 .availableDates .date.unavailable {
   background-color: #9d9d9d;
+  color: #ffffff;
+  padding: 5px;
+  cursor: not-allowed;
+}
+
+.availableDates .date.available {
+  cursor: pointer;
+}
+
+.availableDates .date.selected {
+  background-color: #22c55e;
   color: #ffffff;
   padding: 5px;
 }
@@ -28,6 +68,7 @@
 .days .day {
   font-size: larger;
   text-align: center;
+  min-width: 150px;
 }
 
 .appointments {
@@ -41,4 +82,40 @@
   max-width: 400px;
   min-width: 250px;
   padding: 1rem;
+}
+
+section.instructions {
+  padding: 1rem;
+  min-height: fit-content;
+}
+
+section.instructions h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: lighter;
+  font-style: italic;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.instructionCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+section.instructions .instructionCards .card {
+  flex: 1;
+  border: 2px solid seagreen;
+  max-width: 400px;
+  min-width: 300px;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: rgba(224, 224, 224, 0.8);
+  text-align: center;
+  font-size: larger;
+  font-style: italic;
+  margin-bottom: 1rem;
 }
