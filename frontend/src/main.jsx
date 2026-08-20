@@ -2,9 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router";
 import App from './pages/App.jsx'
-import Schedule from './pages/Schedule.jsx';
+import ViewSponsors from './pages/ViewSponsors.jsx'
 import './css/globle.css'
-import './css/schedule.css'
+import './css/viewSponsors.css'
+import './css/header.css'
 
 const router = createBrowserRouter([
   {
@@ -12,8 +13,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/schedule",
-    element: <Schedule />
+    path: "/view-sponsors",
+    element: <ViewSponsors />
   }
 ])
 

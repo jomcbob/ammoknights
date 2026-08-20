@@ -1,20 +1,12 @@
 import { motion } from "motion/react"
-import choseWebsiteReviews from "../reviews"
+import sponserArr from "../sponsors"
 import { Link } from "react-router"
 import { useTransform, useScroll } from "framer-motion"
-
-const stuffWeOffer = [
-  "Interior Car Detailing",
-  "fast and reliable service",
-  "friendly and professional staff",
-  "competitive pricing",
-  "local business with a focus on quality",
-  "convenient scheduling options",
-]
+import Header from "../components/Header"
 
 export default function App() {
   const { scrollYProgress } = useScroll()
-  const reviews = choseWebsiteReviews()
+
   const scale = useTransform(
     scrollYProgress,
     [0, 0.2],
@@ -29,76 +21,101 @@ export default function App() {
 
   return (
     <>
+    <Header />
+      <section className="hero">
 
-      <section className="img admin">
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          style={{ scale, opacity }}
+        <video
+          className="heroVideo"
+          autoPlay
+          muted
+          loop
+          playsInline
         >
-          Zane's Car Detailing
-        </motion.h1>
+          <source src="/hero-gameplay.mp4" type="video/mp4" />
+        </video>
+
+        <div className="heroText">
+          <motion.h1
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            style={{ scale, opacity }}
+            className="large"
+          >
+            AMMOKNIGHTS
+          </motion.h1>
+          <motion.span
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
+            <Link
+              to="https://www.firstinspires.org/about"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="small"
+            >
+              FRC Team #1566
+            </Link>
+          </motion.span>
+        </div>
+
       </section>
 
-      <section className="light-gray introduction">
-        <h2>What We Offer</h2>
+      {/* About / What We Do */}
+      <section className="sectionLight introduction">
+        <h2 className="header">What We Do</h2>
 
-        <div className="offerings">
-          {stuffWeOffer.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.5 }}
-              transition={{ duration: 0.5, delay: i * 0.25 }}
-              className="offering"
-            >
-              <img height={30} src="/check.svg" alt="" />
-              <span>{item}</span>
-            </motion.div>
-          ))}
+        <div className="content">
+          <p>
+            We are an Idaho Falls–based FIRST Robotics Competition team made up of students, mentors,
+            and sponsors from Idaho Falls and the surrounding communities.
+            Every year, we take on a new challenge: designing, building, programming, and competing with a robot from the ground up.
+            You can think of us like a sports team—but instead of a ball, we have a robot. Our competitions combine engineering, teamwork, strategy, and creativity,
+            giving students the opportunity to put what they learn into practice.
+            Before competition season begins, our team spends time developing the skills we need to succeed.
+            Students learn 3D design, programming, electronics, mechanical design, fabrication, machining, driving, and how to safely use a variety of tools and equipment.
+          </p>
+          <img src="/teamphotos/banner.jpg" alt="" />
         </div>
+
       </section>
 
       <section className="light-blue carousel">
         <div className="reviewCarousel">
-          What Our Customers Say
+          <h2 className="header">Our Royal Sponsers</h2>
+
           <div className="carousel-track">
             {/* we need two of the same thing to create the endless track effect */}
-            {reviews.map((review, i) => (
-              <div key={i} className="review">
-                <span>{review.name}</span>
-                <hr />
-                <span>{review.comment}</span>
+            {sponserArr.map((sponsor, i) => (
+              <div key={i} className="sponser">
+                <span>{sponsor.logo}</span>
               </div>
             ))}
 
-            {reviews.map((review, i) => (
-              <div key={i} className="review">
-                <span>{review.name}</span>
-                <hr />
-                <span>{review.comment}</span>
+            {sponserArr.map((sponsor, i) => (
+              <div key={i} className="sponser">
+                <span>{sponsor.logo}</span>
               </div>
             ))}
+          </div>
+          <div className="moreSponserOptions">
+            <Link to='view-sponsors'>View All Sponsors</Link>
+            <Link>Become A Sponsor</Link>
+            <Link>Sponsorship Impact</Link>
           </div>
         </div>
       </section>
 
-
-      <section className="dark-blue">
-        Schedule an appointment today!
-        <Link to='/schedule'>Schedule Now!</Link>
-      </section>
-
-      <section className="light-gray contact">
+      <section className="sectionLight contact">
         <div className="contact-info">
           <div>
             <h2>Contact Us</h2>
             <p>Phone: 000-000-0000</p>
             <p>Email: 000@000.000</p>
           </div>
-          <form action="">
+
+          <form>
             <div className="input-container">
               <input
                 type="text"
@@ -107,6 +124,7 @@ export default function App() {
               />
               <label htmlFor="name">Name</label>
             </div>
+
             <div className="input-container">
               <input
                 type="email"
@@ -123,86 +141,13 @@ export default function App() {
               />
               <label htmlFor="message">Message</label>
             </div>
-            <button type="submit">Send Message</button>
+
+            <button type="submit">
+              Send Message
+            </button>
           </form>
         </div>
       </section>
     </>
   )
 }
-
-// export default function App() {
-//   const cards = [
-//     "React",
-//     "Node.js",
-//     "Express",
-//     "Prisma",
-//     "PostgreSQL",
-//     "Framer Motion",
-//     "JavaScript",
-//     "TypeScript",
-//     "HTML",
-//     "CSS",
-//   ];
-
-//   return (
-//     <div style={{ fontFamily: "Arial, sans-serif" }}>
-//       {/* Hero */}
-//       <section
-//         style={{
-//           height: "100vh",
-//           display: "grid",
-//           placeItems: "center",
-//           background: "#282c34",
-//           color: "white",
-//         }}
-//       >
-//         <h1>Scroll Down ↓</h1>
-//       </section>
-
-//       {/* Animated Cards */}
-//       <section
-//         style={{
-//           maxWidth: "800px",
-//           margin: "0 auto",
-//           padding: "100px 20px",
-//         }}
-//       >
-//         {cards.map((card, index) => (
-//           <motion.div
-//             key={card}
-//             initial={{
-//               opacity: 0,
-//               y: -100,
-//             }}
-//             whileInView={{
-//               opacity: 1,
-//               y: 0,
-//             }}
-//             viewport={{
-//               once: true,
-//               amount: 0.3,
-//             }}
-//             transition={{
-//               duration: 0.6,
-//               delay: index * 0.15,
-//               ease: "easeOut",
-//             }}
-//             style={{
-//               background: "#61dafb",
-//               padding: "40px",
-//               marginBottom: "30px",
-//               borderRadius: "12px",
-//               fontSize: "2rem",
-//               fontWeight: "bold",
-//               textAlign: "center",
-//               color: "#222",
-//             }}
-//           >
-//             {card}
-//           </motion.div>
-//         ))}
-//       </section>
-//     </div>
-//   );
-// }
