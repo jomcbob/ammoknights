@@ -1,5 +1,5 @@
 header {
-  position: fixed;
+  position: relative;
   top: 1rem;
   left: 5rem;
   right: 5rem;
@@ -10,6 +10,7 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: var(--blue-500);
+  margin: 0 5rem;
 }
 
 .logo {

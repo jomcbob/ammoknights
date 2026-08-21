@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <>
-    <Header />
+      <Header position="fixed" />
       <section className="hero">
 
         <video
@@ -108,9 +108,9 @@ export default function App() {
       </section>
 
       <section className="sectionLight contact">
+        <h2 className="header">Contact Us</h2>
         <div className="contact-info">
           <div>
-            <h2>Contact Us</h2>
             <p>Phone: 000-000-0000</p>
             <p>Email: 000@000.000</p>
           </div>

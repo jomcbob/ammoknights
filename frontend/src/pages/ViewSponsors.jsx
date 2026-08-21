@@ -1,7 +1,10 @@
 import sponsorTiers from "../sponsorTiers"
+import Header from "../components/Header"
 
 export default function ViewSponsors() {
   return (
+    <>
+    <Header position="sticky" />
     <div className="viewSponsors">
       {[...sponsorTiers].sort((a, b) => b.lowRange - a.lowRange).map((tier) => (
         <div
@@ -32,5 +35,6 @@ export default function ViewSponsors() {
         </div>
       ))}
     </div>
+    </>
   )
 }

@@ -1,8 +1,8 @@
 
-
-export default function Header() {
+// position of type string 
+export default function Header({ position = 'relative' }) {
   return (
-    <header>
+    <header style={{ position: position }}>
       <div className="logo">
         Logo
       </div>
