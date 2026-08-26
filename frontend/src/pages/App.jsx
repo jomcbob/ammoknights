@@ -1,11 +1,14 @@
 import { motion } from "motion/react"
 import sponserArr from "../sponsors"
 import { Link } from "react-router"
-import { useTransform, useScroll } from "framer-motion"
+import { useTransform, useScroll, translateAxis } from "framer-motion"
 import Header from "../components/Header"
+import mentors from "../mentors"
+import { useEffect, useState } from "react"
 
 export default function App() {
   const { scrollYProgress } = useScroll()
+  const [mentor, setMentor] = useState(0)
 
   const scale = useTransform(
     scrollYProgress,
@@ -81,9 +84,26 @@ export default function App() {
 
       </section>
 
+      <section className="sectionLight introduction">
+        <h2 className="header">Our Team's Mission:</h2>
+        <div className="content">
+          <img src="/teamphotos/pit.jpg" alt="" />
+
+          <div>
+            We aim to provide a safe and welcoming environment for high-school-aged students interested in STEM and STEAM, and to help them compete well and have character building opportunities that may not be available to them in traditional extracurricular activities.
+            <br />
+            We seek to create a culture that supports STEM development in SE Idaho. We reach out to the community to collect and provide access to professional tools, training and materials and then use these to solve exciting and engaging engineering problems.
+            <br />
+            We work to provide support, training, knowledge and experience that will prepare students to become independent and active participants in their community. They learn to think through and identify challenges, and gain the confidence to develop and implement solutions. A skill applicable to all aspects of life.
+            <br />
+            By learning business and engineering principles students will leave our program armed to be leaders, active decision makers, and problem solvers.
+          </div>
+        </div>
+      </section>
+
       <section className="light-blue carousel">
         <div className="reviewCarousel">
-          <h2 className="header">Our Royal Sponsers</h2>
+          <h2 className="header">Many thanks to our Sponsers!</h2>
 
           <div className="carousel-track">
             {/* we need two of the same thing to create the endless track effect */}
@@ -104,6 +124,54 @@ export default function App() {
             <Link>Become A Sponsor</Link>
             <Link>Sponsorship Impact</Link>
           </div>
+        </div>
+      </section>
+
+      <section className="sectionLight mentorCarousel">
+        <h2 className="header">Meet Our Mentors</h2>
+        <div className="mentorViewport">
+          <div
+            className="mentorTrack"
+            style={{ transform: `translateX(${mentor * -100}%)` }}
+          >
+            {mentors.map((mentor, i) => (
+              <div key={i} className="mentor">
+                <img src="/teamphotos/mentors.jpg" alt={mentor.name} />
+
+                <div className="mentorInfo">
+                  <h3>{mentor.name}</h3>
+
+                  <p className="mentorYears">
+                    <strong>{mentor.timeWithTeam}</strong> years with the team
+                  </p>
+
+                  <p className="mentorBio">
+                    "{mentor.bio}"
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="cycleMentorCardButtons">
+          <button
+            disabled={mentor === 0}
+            onClick={() =>
+              setMentor(prev => Math.max(prev - 1, 0))
+            }
+          >
+            <img src="/arrow-left.svg" alt="previous mentor" />
+          </button>
+          <button
+            // plus one because mentor is 0 indexed and arr.length is not
+            disabled={mentor + 1 === mentors.length}
+            onClick={() =>
+              setMentor(prev => Math.min(prev + 1, mentors.length - 1))
+            }
+          >
+            <img src="/arrow-right.svg" alt="next mentor" />
+          </button>
         </div>
       </section>
 

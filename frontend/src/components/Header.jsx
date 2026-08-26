@@ -1,18 +1,18 @@
+import { Link } from "react-router"
 
 // position of type string 
-export default function Header({ position = 'relative' }) {
+export default function Header({ position = "relative" }) {
   return (
-    <header style={{ position: position }}>
-      <div className="logo">
+    <header className="header" style={{ position }}>
+      <Link to='/' className="logo">
         Logo
-      </div>
+      </Link>
 
       <nav className="nav">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/contact">Contact</a>
+        <Link to="/about">About</Link>
+        <Link to="/sponsor">Sponsor</Link>
+        <Link to="/contact">Contact</Link>
       </nav>
     </header>
-  )
+  );
 }
