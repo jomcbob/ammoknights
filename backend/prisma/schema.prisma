@@ -7,11 +7,25 @@ datasource db {
   provider = "postgresql"
 }
 
-model Review {
+model Sponsor {
   id        Int      @id @default(autoincrement())
   name      String
   email     String
-  rating    Int
-  comment   String
   createdAt DateTime @default(now())
+  logo      String
+}
+
+model Mentor {
+  id           Int    @id @default(autoincrement())
+  name         String
+  bio          String
+  timeWithTeam Int    @default(1)
+}
+
+model Section {
+  id       Int     @id @default(autoincrement())
+  title    String
+  content  String?
+  image    String
+  position Int     @default(0)
 }
