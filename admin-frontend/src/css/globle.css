@@ -1,0 +1,69 @@
+:root {
+  --blue-900: #071A2B;
+  --blue-800: #0B2942;
+  --blue-700: #0F3D63;
+  --blue-600: #155A8A;
+  --blue-500: #1E73AD;
+  --blue-400: #3B8FC4;
+
+  --gray-950: #0B0F14;
+  --gray-900: #151B22;
+  --gray-800: #202830;
+  --gray-700: #303A44;
+  --gray-600: #4A5661;
+  --gray-400: #89959F;
+  --gray-300: #B4BEC6;
+  --gray-200: #D6DCE0;
+  --gray-100: #EEF1F3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  color: var(--gray-100);
+  background: var(--blue-600);
+  overflow-x: hidden;
+}
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+a {
+  color: inherit;
+}
+
+aside {
+  background-color: var(--blue-800);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem;
+  color: var(--gray-200);
+}
+
+aside a {
+  font-size: large;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+aside a:hover:not(.active) {
+  background-color: var(--blue-700);
+}
+
+aside a.active {
+  color: var(--blue-400);
+}
