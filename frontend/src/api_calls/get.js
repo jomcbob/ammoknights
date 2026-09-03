@@ -1,6 +1,6 @@
 const getAllSponsors = async () => {
   try {
-    const response = await fetch("http://localhost:3000/sponsors", {
+    const response = await fetch(`${import.meta.env.VITE_BACKGROUND_URL}/sponsors`, {
       headers: {
         "Content-Type": "application/json",
       }
