@@ -8,11 +8,13 @@ datasource db {
 }
 
 model Sponsor {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String
-  createdAt DateTime @default(now())
-  logo      String
+  id            Int      @id @default(autoincrement())
+  name          String
+  email         String
+  createdAt     DateTime @default(now())
+  logo          String
+  amountDonated Int      @default(0)
+  websiteUrl    String   @default("")
 }
 
 model Mentor {
