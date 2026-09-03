@@ -1,13 +1,14 @@
-import { Outlet, Link, useLocation } from "react-router";
-import { useState } from "react";
-import Sidebar from "../components/Sidebar";
+import { Outlet } from "react-router"
+import Sidebar from "../components/Sidebar"
 
 const App = () => {
 
   return (
     <div className="App">
     <Sidebar />
-    <Outlet />
+    <div className="outlet">
+      <Outlet />
+    </div>
     </div>
   )
 }

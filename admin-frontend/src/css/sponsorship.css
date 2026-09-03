@@ -1,0 +1,191 @@
+.addSponsorPage {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  color: var(--gray-100);
+}
+
+.addSponsorCard {
+  width: 100%;
+  max-width: 650px;
+
+  padding: 2.5rem;
+
+  background: var(--gray-900);
+  border: 1px solid var(--gray-700);
+  border-radius: 1rem;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.addSponsorHeader {
+  margin-bottom: 2rem;
+}
+
+.addSponsorHeader h1 {
+  margin-bottom: 0.5rem;
+
+  font-size: 2rem;
+}
+
+.addSponsorHeader p {
+  color: var(--gray-400);
+}
+
+.sponsorForm {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-weight: 600;
+  color: var(--gray-200);
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup input[type="number"] {
+  width: 100%;
+
+  padding: 0.8rem 1rem;
+
+  border: 1px solid var(--gray-700);
+  border-radius: 0.5rem;
+
+  background: var(--gray-800);
+  color: var(--gray-100);
+
+  font-size: 1rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.formGroup input[type="text"]:focus,
+.formGroup input[type="email"]:focus {
+  border-color: var(--blue-400);
+  background: var(--gray-900);
+}
+
+.formGroup input::placeholder {
+  color: var(--gray-600);
+}
+
+.logoUpload {
+  min-height: 220px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  padding: 2rem;
+
+  border: 2px dashed var(--gray-600);
+  border-radius: 0.75rem;
+
+  background: var(--gray-800);
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.logoUpload:hover {
+  border-color: var(--blue-400);
+  background: var(--blue-900);
+}
+
+.uploadIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  background: var(--blue-700);
+
+  font-size: 1.5rem;
+}
+
+.uploadText {
+  margin-top: 0.5rem;
+
+  font-weight: 600;
+}
+
+.uploadHint {
+  color: var(--gray-400);
+  font-size: 0.85rem;
+}
+
+.logoPreview {
+  max-width: 300px;
+  max-height: 140px;
+
+  object-fit: contain;
+}
+
+.formMessage {
+  padding: 0.75rem 1rem;
+
+  border-radius: 0.5rem;
+
+  background: var(--blue-900);
+  color: var(--gray-200);
+}
+
+.submitSponsor {
+  width: 100%;
+
+  padding: 0.85rem 1rem;
+
+  border-radius: 0.5rem;
+
+  background: var(--blue-600);
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.submitSponsor:hover {
+  background: var(--blue-500);
+}
+
+.submitSponsor:active {
+  transform: scale(0.99);
+}
+
+.submitSponsor:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
