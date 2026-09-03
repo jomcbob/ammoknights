@@ -30,7 +30,13 @@ a {
 
 body {
   color: var(--gray-100);
-  background: var(--blue-600);
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(59, 143, 196, 0.18),
+      transparent 45%
+    ),
+    var(--gray-300);
   overflow-x: hidden;
 }
 
@@ -48,7 +54,11 @@ section .header {
 }
 
 section.sectionLight {
-  background-color: var(--gray-300);
+  background:
+    linear-gradient(135deg,
+      var(--gray-300) 0%,
+      var(--gray-200) 50%,
+      var(--gray-300) 100%);
   color: var(--blue-800);
 }
 
@@ -142,6 +152,11 @@ section.introduction>.content {
 
 section.carousel {
   padding: 2rem 0;
+  background:
+    linear-gradient(135deg,
+      var(--blue-900) 0%,
+      var(--blue-800) 50%,
+      var(--blue-900) 100%);
 }
 
 .reviewCarousel {
@@ -167,10 +182,27 @@ section.carousel {
 }
 
 .sponser {
-  background-color: var(--blue-800);
-  padding: 2rem 4rem;
+  background: var(--gray-200);
+  color: var(--blue-900);
+}
+
+.sponser {
+  background: var(--gray-400);
+  color: var(--blue-900);
+  padding: 0 2rem;
   border-radius: 0.5rem;
-  font-size: 6rem;
+  font-size: 3rem;
+  height: 12rem;
+  max-width: 30rem;
+  min-width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.sponser img {
+  height: 50%;
 }
 
 .sponser:hover {
@@ -200,8 +232,8 @@ section.carousel {
 }
 
 .moreSponserOptions a {
-  background-color: var(--blue-900);
-  color: var(--gray-300);
+  background-color: var(--blue-600);
+  color: var(--gray-2x00);
   padding: 1rem 2rem;
   border-radius: 0.5rem;
 }
@@ -320,6 +352,7 @@ section.mentorCarousel {
 .mentorViewport {
   width: 100%;
   overflow: hidden;
+  border-radius: 1rem;
 }
 
 .mentorTrack {
@@ -332,18 +365,27 @@ section.mentorCarousel {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   flex: 0 0 100%;
   width: 100%;
   box-sizing: border-box;
-
   padding: 2rem;
 
-  background: var(--gray-900);
-  border: 2px solid var(--gray-800);
+  background:
+    radial-gradient(circle at 50% 45%,
+      rgba(59, 143, 196, 0.22) 0%,
+      rgba(59, 143, 196, 0.08) 35%,
+      transparent 65%),
+    linear-gradient(135deg,
+      var(--blue-900) 0%,
+      var(--blue-700) 50%,
+      var(--blue-900) 100%);
+
+  border: 2px solid rgba(59, 143, 196, 0.3);
   border-radius: 1rem;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .mentor img {

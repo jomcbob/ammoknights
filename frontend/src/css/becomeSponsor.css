@@ -1,0 +1,900 @@
+.sponsorPage {
+  min-height: 100vh;
+  background: var(--gray-900);
+  color: var(--gray-100);
+}
+
+/* =========================================
+   GENERAL
+========================================= */
+
+.sponsorSection {
+  width: 100%;
+  padding: 7rem 5%;
+  box-sizing: border-box;
+}
+
+.sectionHeading {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.sectionHeading > span,
+.supportText > span,
+.signupIntro > span,
+.finalSponsorCTA span,
+.formHeader > span {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--blue-400);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.sectionHeading h2,
+.supportText h2,
+.signupIntro h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.sectionHeading p {
+  margin: 1.5rem auto 0;
+  max-width: 650px;
+  color: var(--gray-400);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.sponsorHero {
+  position: relative;
+  min-height: 90vh;
+  padding: 9rem 6% 5rem;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 75% 40%,
+      rgba(15, 61, 99, 0.55),
+      transparent 35%
+    ),
+    var(--gray-900);
+
+  overflow: hidden;
+}
+
+.sponsorHero::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+
+  right: -250px;
+  top: 10%;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.sponsorHero::after {
+  content: "";
+  position: absolute;
+  width: 800px;
+  height: 800px;
+
+  right: -350px;
+  top: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.035);
+  border-radius: 50%;
+}
+
+.sponsorHeroContent {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+}
+
+.sponsorEyebrow {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+
+  color: var(--blue-400);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.sponsorHero h1 {
+  max-width: 850px;
+  margin: 0;
+
+  font-size: clamp(4rem, 9vw, 8rem);
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+}
+
+.sponsorHero h1 span {
+  display: block;
+  color: var(--blue-400);
+}
+
+.sponsorHeroContent > p {
+  max-width: 650px;
+  margin: 2rem 0;
+
+  color: var(--gray-400);
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.heroButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sponsorPrimaryButton,
+.sponsorSecondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem 1.5rem;
+
+  border-radius: 0.6rem;
+
+  font-weight: 800;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.sponsorPrimaryButton {
+  background: var(--blue-700);
+  color: var(--gray-100);
+}
+
+.sponsorPrimaryButton:hover {
+  background: var(--blue-600);
+  transform: translateY(-2px);
+}
+
+.sponsorSecondaryButton {
+  border: 1px solid var(--gray-700);
+  color: var(--gray-200);
+}
+
+.sponsorSecondaryButton:hover {
+  background: var(--gray-800);
+  transform: translateY(-2px);
+}
+
+.heroStats {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  max-width: 1100px;
+  margin-top: 6rem;
+
+  border-top: 1px solid var(--gray-700);
+}
+
+.heroStat {
+  padding: 1.5rem 1.5rem 0;
+  border-right: 1px solid var(--gray-700);
+}
+
+.heroStat:first-child {
+  padding-left: 0;
+}
+
+.heroStat:last-child {
+  border-right: none;
+}
+
+.heroStat strong {
+  display: block;
+  margin-bottom: 0.4rem;
+
+  font-size: 1.8rem;
+  color: var(--gray-100);
+}
+
+.heroStat span {
+  color: var(--gray-500);
+  font-size: 0.85rem;
+}
+
+
+/* =========================================
+   IMPACT
+========================================= */
+
+.impactSection {
+  background: var(--gray-800);
+}
+
+.impactGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.impactCard {
+  padding: 2rem;
+
+  border: 1px solid var(--gray-700);
+  border-radius: 1rem;
+
+  background: var(--gray-900);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.impactCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue-700);
+}
+
+.impactIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 1.5rem;
+
+  border-radius: 0.75rem;
+
+  background: rgba(15, 61, 99, 0.5);
+
+  font-size: 1.5rem;
+}
+
+.impactCard h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.4rem;
+}
+
+.impactCard p {
+  margin: 0;
+  color: var(--gray-400);
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   SPONSOR LEVELS
+========================================= */
+
+.levelsSection {
+  background: var(--gray-900);
+}
+
+.sponsorLevels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.sponsorCard {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem;
+
+  border: 1px solid var(--gray-700);
+  border-radius: 1rem;
+
+  background: var(--gray-800);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.sponsorCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue-700);
+}
+
+.sponsorCardTop {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray-700);
+}
+
+.sponsorRank {
+  display: block;
+  margin-bottom: 1rem;
+
+  font-size: 2rem;
+}
+
+.sponsorCard h3 {
+  margin: 0 0 0.4rem;
+
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sponsorCardTop > strong {
+  display: block;
+  color: var(--blue-400);
+  font-size: 1.15rem;
+}
+
+.sponsorCardTop > p {
+  margin: 1rem 0 0;
+
+  min-height: 3rem;
+
+  color: var(--gray-400);
+  line-height: 1.5;
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.85rem;
+
+  padding: 1.5rem 0;
+
+  flex: 1;
+}
+
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.benefit > span {
+  flex-shrink: 0;
+
+  color: var(--blue-400);
+  font-weight: 900;
+}
+
+.benefit p {
+  margin: 0;
+
+  color: var(--gray-300);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.chooseSponsorButton {
+  width: 100%;
+  padding: 0.9rem;
+
+  border: 1px solid var(--gray-600);
+  border-radius: 0.5rem;
+
+  background: transparent;
+  color: var(--gray-100);
+
+  font: inherit;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.chooseSponsorButton:hover {
+  background: var(--blue-700);
+  border-color: var(--blue-700);
+}
+
+.featuredSponsor {
+  border-color: var(--blue-700);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 61, 99, 0.45),
+      var(--gray-800) 50%
+    );
+}
+
+.popularBadge,
+.titleBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  padding: 0.35rem 0.6rem;
+
+  border-radius: 999px;
+
+  background: var(--blue-700);
+  color: var(--gray-100);
+
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.titleSponsor {
+  grid-column: 1 / -1;
+
+  border-color: var(--blue-500);
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(15, 61, 99, 0.5),
+      transparent 35%
+    ),
+    var(--gray-800);
+}
+
+.titleSponsor .benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3rem;
+}
+
+
+/* =========================================
+   SUPPORT / COST
+========================================= */
+
+.supportSection {
+  background: var(--gray-800);
+}
+
+.supportContent {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 5rem;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.supportText > p {
+  max-width: 700px;
+
+  color: var(--gray-400);
+  line-height: 1.8;
+}
+
+.fundingList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+
+  margin-top: 2rem;
+
+  color: var(--gray-200);
+  font-weight: 700;
+}
+
+.costCard {
+  align-self: start;
+
+  padding: 2rem;
+
+  border: 1px solid var(--gray-700);
+  border-radius: 1rem;
+
+  background: var(--gray-900);
+}
+
+.costCardHeader {
+  margin-bottom: 1.5rem;
+}
+
+.costCardHeader span {
+  color: var(--blue-400);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.costCardHeader h3 {
+  margin: 0.5rem 0 0;
+  font-size: 1.7rem;
+}
+
+.costRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 1rem 0;
+
+  border-top: 1px solid var(--gray-700);
+}
+
+.costRow span {
+  color: var(--gray-400);
+}
+
+.costRow strong {
+  color: var(--gray-100);
+}
+
+.totalCost strong {
+  color: var(--blue-400);
+}
+
+
+/* =========================================
+   SIGNUP
+========================================= */
+
+.signupSection {
+  background: var(--gray-900);
+}
+
+.signupContainer {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 5rem;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.signupIntro {
+  padding-top: 1rem;
+}
+
+.signupIntro h2 {
+  font-size: clamp(3rem, 6vw, 5rem);
+}
+
+.signupIntro > p {
+  max-width: 500px;
+
+  color: var(--gray-400);
+  line-height: 1.7;
+}
+
+.contactInfo {
+  margin-top: 3rem;
+  padding-top: 2rem;
+
+  border-top: 1px solid var(--gray-700);
+}
+
+.contactInfo h3 {
+  margin: 0 0 1rem;
+}
+
+.contactInfo p {
+  color: var(--gray-400);
+  line-height: 1.6;
+}
+
+.contactInfo a {
+  color: var(--blue-400);
+  text-decoration: none;
+}
+
+.nonprofitText {
+  font-size: 0.85rem;
+}
+
+.sponsorForm {
+  padding: 2rem;
+
+  border: 1px solid var(--gray-700);
+  border-radius: 1rem;
+
+  background: var(--gray-800);
+}
+
+.formHeader {
+  margin-bottom: 2rem;
+}
+
+.formHeader h3 {
+  margin: 0;
+
+  font-size: 1.8rem;
+}
+
+.sponsorForm label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  margin-bottom: 1.25rem;
+
+  color: var(--gray-300);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.sponsorForm input,
+.sponsorForm select,
+.sponsorForm textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 0.9rem 1rem;
+
+  border: 1px solid var(--gray-600);
+  border-radius: 0.5rem;
+
+  background: var(--gray-900);
+  color: var(--gray-100);
+
+  font: inherit;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.sponsorForm textarea {
+  resize: vertical;
+}
+
+.sponsorForm input:focus,
+.sponsorForm select:focus,
+.sponsorForm textarea:focus {
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 2px rgba(15, 61, 99, 0.3);
+}
+
+.sponsorForm input::placeholder,
+.sponsorForm textarea::placeholder {
+  color: var(--gray-600);
+}
+
+.submitSponsorButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 1rem 1.25rem;
+
+  border: none;
+  border-radius: 0.5rem;
+
+  background: var(--blue-700);
+  color: var(--gray-100);
+
+  font: inherit;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.submitSponsorButton:hover {
+  background: var(--blue-600);
+  transform: translateY(-2px);
+}
+
+.submitSponsorButton span {
+  font-size: 1.3rem;
+}
+
+.formDisclaimer {
+  margin: 1rem 0 0;
+
+  color: var(--gray-600);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.finalSponsorCTA {
+  padding: 7rem 5%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 61, 99, 0.8),
+      rgba(15, 61, 99, 0.25)
+    ),
+    var(--gray-900);
+
+  border-top: 1px solid var(--gray-700);
+  text-align: center;
+}
+
+.finalSponsorCTA > div {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.finalSponsorCTA h2 {
+  margin: 0;
+
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+}
+
+.finalSponsorCTA p {
+  margin: 1.5rem auto 2rem;
+
+  color: var(--gray-300);
+  line-height: 1.7;
+}
+
+.finalSponsorCTA a {
+  display: inline-block;
+
+  padding: 1rem 1.5rem;
+
+  border-radius: 0.5rem;
+
+  background: var(--gray-100);
+  color: var(--gray-900);
+
+  font-weight: 900;
+  text-decoration: none;
+
+  transition: transform 0.2s ease;
+}
+
+.finalSponsorCTA a:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  .sponsorLevels {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .titleSponsor {
+    grid-column: 1 / -1;
+  }
+
+  .supportContent,
+  .signupContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .sponsorHero {
+    min-height: auto;
+    padding-top: 8rem;
+  }
+
+  .sponsorHero h1 {
+    font-size: clamp(3.5rem, 15vw, 6rem);
+  }
+
+  .heroStats {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 4rem;
+  }
+
+  .heroStat {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--gray-700);
+  }
+
+  .heroStat:nth-child(2) {
+    border-right: none;
+    padding-left: 1rem;
+  }
+
+  .heroStat:nth-child(3) {
+    padding-left: 0;
+  }
+
+  .heroStat:nth-child(4) {
+    border-right: none;
+    padding-left: 1rem;
+  }
+
+  .impactGrid,
+  .sponsorLevels {
+    grid-template-columns: 1fr;
+  }
+
+  .titleSponsor {
+    grid-column: auto;
+  }
+
+  .titleSponsor .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .fundingList {
+    grid-template-columns: 1fr;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .sponsorSection {
+    padding: 5rem 6%;
+  }
+}
+
+@media (max-width: 500px) {
+  .heroButtons {
+    flex-direction: column;
+  }
+
+  .sponsorPrimaryButton,
+  .sponsorSecondaryButton {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .heroStats {
+    grid-template-columns: 1fr;
+  }
+
+  .heroStat,
+  .heroStat:nth-child(2),
+  .heroStat:nth-child(3),
+  .heroStat:nth-child(4) {
+    padding-left: 0;
+    border-right: none;
+  }
+
+  .sponsorForm {
+    padding: 1.25rem;
+  }
+}

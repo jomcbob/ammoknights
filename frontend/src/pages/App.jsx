@@ -1,14 +1,40 @@
 import { motion } from "motion/react"
-import sponserArr from "../sponsors"
 import { Link } from "react-router"
-import { useTransform, useScroll, translateAxis } from "framer-motion"
+import { useTransform, useScroll } from "framer-motion"
 import Header from "../components/Header"
 import mentors from "../mentors"
 import { useEffect, useState } from "react"
+import { getAllSponsors } from "../api_calls/get"
 
 export default function App() {
   const { scrollYProgress } = useScroll()
   const [mentor, setMentor] = useState(0)
+  const [sponsors, setSponsors] = useState(null)
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    })
+  }, [])
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const res = await getAllSponsors()
+        console.log(res)
+        if (!res) {
+          throw new Error('Sponsor fetch failed')
+        }
+        setSponsors(res)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    load()
+  }, [])
 
   const scale = useTransform(
     scrollYProgress,
@@ -107,22 +133,42 @@ export default function App() {
 
           <div className="carousel-track">
             {/* we need two of the same thing to create the endless track effect */}
-            {sponserArr.map((sponsor, i) => (
-              <div key={i} className="sponser">
-                <span>{sponsor.logo}</span>
-              </div>
+            {sponsors && sponsors.map((sponsor, i) => (
+              <a
+                href={sponsor.websiteUrl || undefined}
+                key={i}
+                className="sponser"
+                target={sponsor.websiteUrl ? "_blank" : undefined}
+                rel={sponsor.websiteUrl ? "noopener noreferrer" : undefined}
+              >
+                {sponsor.logo ? (
+                  <img height={50} src={sponsor.logo} alt={sponsor.name} />
+                ) : (
+                  <span>{sponsor.name}</span>
+                )}
+              </a>
             ))}
 
-            {sponserArr.map((sponsor, i) => (
-              <div key={i} className="sponser">
-                <span>{sponsor.logo}</span>
-              </div>
+            {sponsors && sponsors.map((sponsor, i) => (
+              <a
+                href={sponsor.websiteUrl || undefined}
+                key={i}
+                className="sponser"
+                target={sponsor.websiteUrl ? "_blank" : undefined}
+                rel={sponsor.websiteUrl ? "noopener noreferrer" : undefined}
+              >
+                {sponsor.logo ? (
+                  <img height={50} src={sponsor.logo} alt={sponsor.name} />
+                ) : (
+                  <span>{sponsor.name}</span>
+                )}
+              </a>
             ))}
           </div>
           <div className="moreSponserOptions">
-            <Link to='view-sponsors'>View All Sponsors</Link>
-            <Link>Become A Sponsor</Link>
-            <Link>Sponsorship Impact</Link>
+            <Link to='/sponsors/view'>View All Sponsors</Link>
+            <Link to='/sponsors/become'>Become A Sponsor</Link>
+            {/* <Link to='/sponsors/impact'>Sponsorship Impact</Link> */}
           </div>
         </div>
       </section>

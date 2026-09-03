@@ -1,0 +1,550 @@
+.aboutPage {
+  background: var(--gray-950);
+  color: var(--gray-200);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.aboutHero {
+    z-index: 1010;
+  min-height: 70vh;
+  padding: 0 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(59, 143, 196, 0.25) 0%,
+      rgba(15, 61, 99, 0.12) 35%,
+      transparent 70%
+    ),
+    linear-gradient(
+      135deg,
+      var(--blue-900) 0%,
+      var(--blue-700) 50%,
+      var(--blue-900) 100%
+    );
+}
+
+.aboutHeroContent {
+  max-width: 1000px;
+}
+
+.aboutEyebrow {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--blue-400);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.aboutHero h1 {
+  margin: 0;
+  color: var(--gray-100);
+  font-size: clamp(3.5rem, 6vw, 8rem);
+  line-height: 0.95;
+}
+
+.aboutHero p {
+  max-width: 750px;
+  margin: 2rem auto;
+  color: var(--gray-300);
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+
+.aboutHeroButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.aboutHeroButtons a,
+.aboutJoinButtons a {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.aboutHeroButtons a:first-child,
+.aboutJoinButtons a:first-child {
+  background: var(--blue-500);
+  color: var(--gray-100);
+}
+
+.aboutHeroButtons a:last-child,
+.aboutJoinButtons a:last-child {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--gray-100);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.aboutHeroButtons a:hover,
+.aboutJoinButtons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.aboutSection {
+  padding: 6rem;
+}
+
+.aboutLight {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(59, 143, 196, 0.12),
+      transparent 40%
+    ),
+    var(--gray-300);
+
+  color: var(--blue-800);
+}
+
+.aboutDark {
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(59, 143, 196, 0.15),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      var(--blue-900) 0%,
+      var(--gray-900) 50%,
+      var(--blue-900) 100%
+    );
+}
+
+.aboutBlue {
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(59, 143, 196, 0.25),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      var(--blue-900) 0%,
+      var(--blue-700) 50%,
+      var(--blue-900) 100%
+    );
+}
+
+.aboutSectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.aboutSectionHeader span {
+  color: var(--blue-500);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.aboutDark .aboutSectionHeader span,
+.aboutBlue .aboutSectionHeader span {
+  color: var(--blue-400);
+}
+
+.aboutSectionHeader h2 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+}
+
+
+/* =========================
+   WHO WE ARE
+========================= */
+
+.aboutContent {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.aboutText {
+  flex: 1;
+}
+
+.aboutText p {
+  margin: 0 0 1.5rem;
+  line-height: 1.8;
+  font-size: 1.15rem;
+}
+
+.aboutImageGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.aboutImageGrid img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.aboutImageGrid img:hover {
+  transform: translateY(-5px);
+}
+
+
+/* =========================
+   HISTORY
+========================= */
+
+.aboutHistory {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.historyItem {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 3rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.historyItem:last-child {
+  border-bottom: none;
+}
+
+.historyYear {
+  color: var(--blue-400);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.historyItem h3 {
+  margin: 0 0 0.75rem;
+  color: var(--gray-100);
+  font-size: 1.8rem;
+}
+
+.historyItem p {
+  margin: 0;
+  color: var(--gray-300);
+  line-height: 1.7;
+}
+
+
+/* =========================
+   WHAT WE DO
+========================= */
+
+.aboutCards {
+  max-width: 1400px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.aboutCard {
+  padding: 2.5rem;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(59, 143, 196, 0.15),
+      transparent 45%
+    ),
+    var(--gray-200);
+
+  border: 1px solid rgba(7, 26, 43, 0.1);
+  border-radius: 1rem;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.aboutCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.aboutCardIcon {
+  margin-bottom: 1.5rem;
+  color: var(--blue-500);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.aboutCard h3 {
+  margin: 0 0 1rem;
+  color: var(--blue-900);
+  font-size: 2rem;
+}
+
+.aboutCard p {
+  margin: 0;
+  color: var(--blue-800);
+  line-height: 1.7;
+}
+
+
+/* =========================
+   COMMUNITY OUTREACH
+========================= */
+
+.aboutOutreach {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.outreachItem {
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+}
+
+.outreachItem h3 {
+  margin-top: 0;
+  color: var(--gray-100);
+  font-size: 1.5rem;
+}
+
+.outreachItem p {
+  color: var(--gray-300);
+  line-height: 1.7;
+}
+
+
+/* =========================
+   FIRST
+========================= */
+
+.aboutFirstContent {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.aboutFirstContent h2 {
+  margin: 0;
+  color: var(--gray-100);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+}
+
+.aboutFirstContent p {
+  color: var(--gray-300);
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   TEAM TODAY
+========================= */
+
+.aboutContentReverse {
+  align-items: stretch;
+}
+
+.aboutMissionBox {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 3rem;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(59, 143, 196, 0.2),
+      transparent 65%
+    ),
+    linear-gradient(
+      135deg,
+      var(--blue-900) 0%,
+      var(--blue-700) 50%,
+      var(--blue-900) 100%
+    );
+
+  border-radius: 1rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.aboutMissionBox span {
+  color: var(--blue-400);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.aboutMissionBox h3 {
+  margin: 1rem 0;
+  color: var(--gray-100);
+  font-size: 2.5rem;
+}
+
+.aboutMissionBox p {
+  margin: 0;
+  color: var(--gray-300);
+  line-height: 1.7;
+}
+
+
+/* =========================
+   JOIN
+========================= */
+
+.aboutJoin {
+  padding: 7rem 6rem;
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(59, 143, 196, 0.25),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      var(--blue-900) 0%,
+      var(--blue-700) 50%,
+      var(--blue-900) 100%
+    );
+}
+
+.aboutJoin > div {
+  max-width: 900px;
+  margin: auto;
+}
+
+.aboutJoin h2 {
+  margin: 0.5rem 0 1.5rem;
+  color: var(--gray-100);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+}
+
+.aboutJoin p {
+  color: var(--gray-300);
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.aboutJoinButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 1000px) {
+
+  .aboutHero {
+    padding: 4rem 2rem;
+    min-height: 60vh;
+  }
+
+  .aboutHero h1 {
+    font-size: clamp(3.5rem, 15vw, 6rem);
+  }
+
+  .aboutHero p {
+    font-size: 1.1rem;
+  }
+
+  .aboutHeroButtons {
+    flex-direction: column;
+  }
+
+  .aboutSection {
+    padding: 4rem 2rem;
+  }
+
+  .aboutContent,
+  .aboutContentReverse {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .aboutImageGrid {
+    width: 100%;
+  }
+
+  .aboutImageGrid img {
+    height: 180px;
+  }
+
+  .aboutCards {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutOutreach {
+    grid-template-columns: 1fr;
+  }
+
+  .historyItem {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .aboutFirstContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .aboutJoin {
+    padding: 5rem 2rem;
+  }
+
+  .aboutJoinButtons {
+    flex-direction: column;
+  }
+}

@@ -1,86 +1,338 @@
-  .viewSponsors {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 2rem;
-  }
+/* =========================
+   SPONSOR PAGE
+========================= */
 
-.sponsorTier {
+.viewSponsors {
+  min-height: 100vh;
+  padding: 8rem 6rem 5rem;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(59, 143, 196, 0.18),
+      transparent 45%
+    ),
+    var(--gray-300);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   SPONSOR TIER
+========================= */
+
+.viewSponsors .sponsorTier {
+  max-width: 1400px;
+  margin: 0 auto 5rem;
+  padding: 3rem;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(59, 143, 196, 0.15),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      var(--gray-200) 0%,
+      var(--gray-300) 50%,
+      var(--gray-200) 100%
+    );
+
+  border: 1px solid rgba(7, 26, 43, 0.12);
+  border-radius: 1rem;
+
+  box-shadow:
+    0 15px 40px rgba(7, 26, 43, 0.15);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   TIER HEADER
+========================= */
+
+.viewSponsors .sponsorTier h2 {
+  margin: 0;
+
+  color: var(--blue-900);
+
+  text-align: center;
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+}
+
+.viewSponsors .sponsorRange {
+  margin: 0.5rem 0 0;
+
+  color: var(--blue-600);
+
+  text-align: center;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.viewSponsors .sponsorDescription {
+  max-width: 600px;
+  margin: 1rem auto 3rem;
+
+  color: var(--blue-800);
+
+  text-align: center;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   SPONSORS
+========================= */
+
+.viewSponsors .sponsors {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: stretch;
+
+  gap: 2rem;
+}
+
+.viewSponsors .nameLogo {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--blue-900);
+}
+
+
+/* =========================
+   SPONSOR CARD
+========================= */
+
+.viewSponsors .sponser {
+  width: 260px;
+  min-height: 230px;
+
   padding: 1.5rem;
-  background: var(--gray-900);
-  border: 1px solid var(--gray-700);
-  border-radius: 0.75rem;
+
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-}
 
-.sponsorTier.sponsorTier-king h2 {
-  color: goldenrod;
-}
-
-.sponsorTier.sponsorTier-royal h2 {
-  color: blueviolet;
-}
-
-.sponsorTier h2 {
-  margin: 0;
-  color: var(--blue-400);
-  text-align: center;
-  font-size: 3rem;
-  margin: 0;
-}
-
-.sponsorTier>p {
-  margin: 0;
-  text-align: center;
-  color: var(--gray-300);
-}
-
-.sponsors {
-  display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+
   gap: 1rem;
+
+  text-decoration: none;
+
+  color: var(--blue-900);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gray-200) 0%,
+      var(--blue-400) 50%,
+      var(--gray-200) 100%
+    );
+
+  border: 1px solid rgba(7, 26, 43, 0.15);
+  border-radius: 0.75rem;
+
+  box-shadow:
+    0 8px 20px rgba(7, 26, 43, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
-.sponsor {
-  min-width: 0;
+.viewSponsors .sponser:hover {
+  transform: translateY(-8px);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gray-100) 0%,
+      var(--blue-500) 50%,
+      var(--gray-100) 100%
+    );
+
+  border-color: var(--blue-400);
+
+  box-shadow:
+    0 18px 35px rgba(7, 26, 43, 0.25);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.viewSponsors .sponsorLogo {
+  width: 100%;
+  height: 130px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
   padding: 1rem;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  box-sizing: border-box;
 
-  gap: 0.4rem;
+  background:
+    linear-gradient(
+      135deg,
+      var(--gray-400) 0%,
+      var(--gray-300) 50%,
+      var(--gray-400) 100%
+    );
 
-  background: var(--gray-800);
-  color: var(--gray-100);
+  border-radius: 0.6rem;
 
-  border: 1px solid var(--gray-700);
-  border-radius: 0.5rem;
+  box-shadow:
+    inset 0 0 0 1px rgba(7, 26, 43, 0.08);
 }
 
-.sponsor a {
-  color: var(--blue-400);
-  text-decoration: none;
+.viewSponsors .sponsorLogo img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 90%;
+  max-height: 100%;
+
+  object-fit: contain;
 }
 
-.sponsor a:hover {
-  color: var(--blue-300);
+
+/* =========================
+   SPONSOR NAME
+========================= */
+
+.viewSponsors .sponser h3 {
+  margin: 0;
+
+  color: var(--blue-900);
+
+  text-align: center;
+
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
-.sponsorLogo {
-  width: 140px;
-  height: 70px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* =========================
+   DONATION
+========================= */
+
+.viewSponsors .sponser .sponsorAmount {
+  color: var(--blue-600);
+
+  font-size: 1rem;
+  font-weight: 700;
 }
 
-.sponsorLogo svg {
-  width: 100%;
-  height: 100%;
+
+/* =========================
+   TIER VARIATIONS
+========================= */
+
+.viewSponsors .sponsorTier-title-sponsor {
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(59, 143, 196, 0.22),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      var(--blue-100, #dbeaf4) 0%,
+      var(--gray-200) 50%,
+      var(--blue-100, #dbeaf4) 100%
+    );
+}
+
+.viewSponsors .sponsorTier-royal {
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(59, 143, 196, 0.18),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      var(--gray-200) 0%,
+      var(--gray-300) 50%,
+      var(--gray-200) 100%
+    );
+}
+
+.viewSponsors .sponsorTier-baron {
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(59, 143, 196, 0.15),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      var(--gray-200) 0%,
+      var(--gray-300) 50%,
+      var(--gray-200) 100%
+    );
+}
+
+.viewSponsors .sponsorTier-knight,
+.viewSponsors .sponsorTier-squire,
+.viewSponsors .sponsorTier-page {
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(59, 143, 196, 0.1),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      var(--gray-100) 0%,
+      var(--gray-300) 50%,
+      var(--gray-100) 100%
+    );
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  .viewSponsors {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .viewSponsors .sponsorTier {
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .viewSponsors .sponsors {
+    gap: 1rem;
+  }
+
+  .viewSponsors .sponser {
+    width: 100%;
+    max-width: 350px;
+  }
 }

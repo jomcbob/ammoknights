@@ -7,7 +7,7 @@ const mentors = [
   {
     name: 'Anne',
     timeWithTeam: 6,
-    bio: 'got involved when my son started doing it and have just stuck with it. I love seeing the fun side of engineering. In my spare time I like to read, sew, travel, take care of my garden in the summer and go fishing.'
+    bio: 'I got involved when my son started doing it and have just stuck with it. I love seeing the fun side of engineering. In my spare time I like to read, sew, travel, take care of my garden in the summer and go fishing.'
   },
 ]
 

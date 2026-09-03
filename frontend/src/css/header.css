@@ -10,7 +10,13 @@ header {
   align-items: center;
   justify-content: space-between;
 
-  background: rgba(15, 61, 99, 0.92);
+  /* background: rgba(15, 61, 99, 0.92); */
+  background: linear-gradient(
+  135deg,
+  var(--blue-900) 0%,
+  var(--blue-700) 50%,
+  var(--blue-900) 100%
+);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 1rem;
 
@@ -60,6 +66,14 @@ header {
   transform: translateY(-1px);
 }
 
+.logo {
+  height: 75px;
+}
+
+.logo img {
+  height: 75px;
+}
+
 @media (max-width: 800px) {
   header {
     margin: 0;
@@ -82,4 +96,16 @@ header {
     padding: 0.5rem 0.7rem;
     font-size: 0.9rem;
   }
+}
+
+.header {
+  transition: transform 0.3s ease;
+}
+
+.headerVisible {
+  transform: translateY(0);
+}
+
+.headerHidden {
+  transform: translateY(calc(-100% - 2rem));
 }
