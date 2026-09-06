@@ -73,7 +73,7 @@ const BecomeSponsor = () => {
 
           <div className="heroButtons">
             <Link to="/sponsors/why-become" className="sponsorPrimaryButton">
-              Why Support Us?
+              See Your Impact
             </Link>
           </div>
         </div>
