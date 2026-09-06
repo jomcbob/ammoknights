@@ -176,16 +176,6 @@
   transform: translateY(-2px);
 }
 
-.sponsorSecondaryButton {
-  border: 1px solid var(--gray-700);
-  color: var(--gray-200);
-}
-
-.sponsorSecondaryButton:hover {
-  background: var(--gray-800);
-  transform: translateY(-2px);
-}
-
 .heroStats {
   position: relative;
   z-index: 2;
@@ -560,7 +550,7 @@
 ========================================= */
 
 .signupSection {
-  background: var(--gray-900);
+  background: var(--gray-800);
 }
 
 .signupContainer {
@@ -618,7 +608,7 @@
   border: 1px solid var(--gray-700);
   border-radius: 1rem;
 
-  background: var(--gray-800);
+  background: var(--gray-900);
 }
 
 .formHeader {
@@ -728,65 +718,6 @@
   font-size: 0.75rem;
   line-height: 1.5;
   text-align: center;
-}
-
-
-/* =========================================
-   FINAL CTA
-========================================= */
-
-.finalSponsorCTA {
-  padding: 7rem 5%;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(15, 61, 99, 0.8),
-      rgba(15, 61, 99, 0.25)
-    ),
-    var(--gray-900);
-
-  border-top: 1px solid var(--gray-700);
-  text-align: center;
-}
-
-.finalSponsorCTA > div {
-  max-width: 750px;
-  margin: 0 auto;
-}
-
-.finalSponsorCTA h2 {
-  margin: 0;
-
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1;
-}
-
-.finalSponsorCTA p {
-  margin: 1.5rem auto 2rem;
-
-  color: var(--gray-300);
-  line-height: 1.7;
-}
-
-.finalSponsorCTA a {
-  display: inline-block;
-
-  padding: 1rem 1.5rem;
-
-  border-radius: 0.5rem;
-
-  background: var(--gray-100);
-  color: var(--gray-900);
-
-  font-weight: 900;
-  text-decoration: none;
-
-  transition: transform 0.2s ease;
-}
-
-.finalSponsorCTA a:hover {
-  transform: translateY(-2px);
 }
 
 

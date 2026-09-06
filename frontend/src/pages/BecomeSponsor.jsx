@@ -2,24 +2,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import Header from "../components/Header"
 import sponsorshipLevels from "../sponsorTiers"
-
-const impactItems = [
-  {
-    icon: "⚙",
-    title: "Hands-On STEM",
-    text: "Students design, build, program, fabricate, and compete with a real competition robot.",
-  },
-  {
-    icon: "🤝",
-    title: "Community",
-    text: "We work with organizations such as Community Youth in Action to help provide opportunities for local youth.",
-  },
-  {
-    icon: "🚀",
-    title: "Future Careers",
-    text: "Students develop problem-solving, teamwork, communication, and professional skills that can follow them into their careers.",
-  },
-]
+import { Link } from "react-router"
 
 const BecomeSponsor = () => {
   const [selectedLevel, setSelectedLevel] = useState("")
@@ -32,18 +15,47 @@ const BecomeSponsor = () => {
     })
   }, [])
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
 
-    // Connect this to your backend later.
-    console.log("Sponsor request submitted")
+    const form = event.target
+    const formData = new FormData(form)
+
+    formData.append("access_key", "476545c3-a6e2-458b-ad0a-8ebd58e90b56")
+
+    formData.append(
+      "subject",
+      `New Sponsorship Offer`
+    )
+
+    formData.append("from_name", "Ammoknights Sponsorship Form")
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        alert("Thank you! Your sponsorship offer has been submitted.")
+        form.reset()
+        setSelectedLevel("")
+      } else {
+        alert("Something went wrong. Please try again.")
+        console.error(data)
+      }
+    } catch (error) {
+      console.error(error)
+      alert("Something went wrong. Please try again.")
+    }
   }
 
   return (
     <div className="sponsorPage">
       <Header position="sticky" />
 
-      {/* HERO */}
       <section className="sponsorHero">
         <div className="sponsorHeroContent">
           <span className="sponsorEyebrow">AMMOKNIGHTS ROBOTICS</span>
@@ -60,13 +72,9 @@ const BecomeSponsor = () => {
           </p>
 
           <div className="heroButtons">
-            <a href="#sponsorship-levels" className="sponsorPrimaryButton">
-              Become a Sponsor
-            </a>
-
-            <a href="#why-support" className="sponsorSecondaryButton">
+            <Link to="/sponsors/why-become" className="sponsorPrimaryButton">
               Why Support Us?
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -93,29 +101,6 @@ const BecomeSponsor = () => {
         </div>
       </section>
 
-      {/* COMMUNITY IMPACT */}
-      <section className="sponsorSection impactSection">
-        <div className="sectionHeading">
-          <span>WHY IT MATTERS</span>
-          <h2>Your Support Has an Impact</h2>
-          <p>
-            The Ammoknights are more than a robotics team. We're giving young
-            people an opportunity to learn, build, compete, and grow.
-          </p>
-        </div>
-
-        <div className="impactGrid">
-          {impactItems.map((item) => (
-            <div className="impactCard" key={item.title}>
-              <div className="impactIcon">{item.icon}</div>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SPONSORSHIP LEVELS */}
       <section
         className="sponsorSection levelsSection"
         id="sponsorship-levels"
@@ -181,75 +166,6 @@ const BecomeSponsor = () => {
         </div>
       </section>
 
-      {/* WHY WE NEED SUPPORT */}
-      <section className="sponsorSection supportSection" id="why-support">
-        <div className="supportContent">
-          <div className="supportText">
-            <span>WHERE YOUR SUPPORT GOES</span>
-
-            <h2>Why We Need Your Help</h2>
-
-            <p>
-              Competitive robotics is expensive. Annual registration alone
-              costs a minimum of $6,300, with an additional $3,000 or more for
-              each regional competition. Travel costs are on top of that.
-            </p>
-
-            <p>
-              Robot components, motors, swerve drive systems, controllers,
-              electronics, materials, and other equipment can quickly add up.
-              We typically spend around $5,000 just on robot parts.
-            </p>
-
-            <p>
-              Additional funding allows us to expand what we can offer
-              students and our community.
-            </p>
-
-            <div className="fundingList">
-              <div>✓ STEM outreach supplies</div>
-              <div>✓ Larger workspace</div>
-              <div>✓ Future-season funding</div>
-              <div>✓ Community outreach</div>
-            </div>
-          </div>
-
-          <div className="costCard">
-            <div className="costCardHeader">
-              <span>OUR SEASON</span>
-              <h3>It Takes a Team</h3>
-            </div>
-
-            <div className="costRow">
-              <span>Registration</span>
-              <strong>$6,300+</strong>
-            </div>
-
-            <div className="costRow">
-              <span>Additional Regional</span>
-              <strong>$3,000+</strong>
-            </div>
-
-            <div className="costRow">
-              <span>Robot & Components</span>
-              <strong>~$5,000</strong>
-            </div>
-
-
-            <div className="costRow totalCost">
-              <span>Growing our tools</span>
-              <strong>Additional</strong>
-            </div>
-
-            <div className="costRow totalCost">
-              <span>Travel</span>
-              <strong>Additional</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SIGNUP */}
       <section className="sponsorSection signupSection" id="sponsor-signup">
         <div className="signupContainer">
           <div className="signupIntro">
@@ -286,7 +202,7 @@ const BecomeSponsor = () => {
 
           <form className="sponsorForm" onSubmit={handleSubmit}>
             <div className="formHeader">
-              <span>SPONSORSHIP REQUEST</span>
+              <span>SPONSORSHIP OFFER</span>
               <h3>Tell Us About Your Business</h3>
             </div>
 
@@ -370,7 +286,7 @@ const BecomeSponsor = () => {
             </label>
 
             <button type="submit" className="submitSponsorButton">
-              Submit Sponsorship Request
+              Submit Sponsorship Offer
               <span>→</span>
             </button>
 
@@ -379,20 +295,6 @@ const BecomeSponsor = () => {
               will contact you with the next steps.
             </p>
           </form>
-        </div>
-      </section>
-
-      {/* FOOTER CTA */}
-      <section className="finalSponsorCTA">
-        <div>
-          <span>AMMOKNIGHTS ROBOTICS</span>
-          <h2>Build Something That Lasts.</h2>
-          <p>
-            Your support helps us build robots today and build the engineers,
-            leaders, and problem solvers of tomorrow.
-          </p>
-
-          <a href="#sponsor-signup">Become a Sponsor →</a>
         </div>
       </section>
     </div>

@@ -28,14 +28,26 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+a:active {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+button {
+  cursor: pointer;
+}
+
 body {
   color: var(--gray-100);
   background:
-    radial-gradient(
-      circle at 50% 0%,
+    radial-gradient(circle at 50% 0%,
       rgba(59, 143, 196, 0.18),
-      transparent 45%
-    ),
+      transparent 45%),
     var(--gray-300);
   overflow-x: hidden;
 }
@@ -187,8 +199,12 @@ section.carousel {
 }
 
 .sponser {
-  background: var(--gray-400);
   color: var(--blue-900);
+  background:
+    linear-gradient(135deg,
+      var(--gray-400) 0%,
+      var(--gray-300) 50%,
+      var(--gray-400) 100%);
   padding: 0 2rem;
   border-radius: 0.5rem;
   font-size: 3rem;
@@ -236,111 +252,6 @@ section.carousel {
   color: var(--gray-2x00);
   padding: 1rem 2rem;
   border-radius: 0.5rem;
-}
-
-.contact-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-  font-size: 1.5rem;
-}
-
-.input-container {
-  position: relative;
-}
-
-form {
-  width: min(90vw, 500px);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-form button {
-  width: 100%;
-  background-color: var(--blue-700);
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-size: 1.2rem;
-  color: var(--gray-200);
-}
-
-.input-container input,
-.input-container textarea {
-  width: 100%;
-  padding: 1rem;
-  color: var(--gray-900);
-  background: var(--gray-400);
-  border: 2px solid var(--gray-300);
-  border-radius: 0.5rem;
-  outline: none;
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.input-container input {
-  height: 55px;
-}
-
-.input-container textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-
-.input-container input:focus,
-.input-container textarea:focus {
-  border-color: var(--blue-500);
-
-  box-shadow:
-    0 0 0 3px rgba(30, 115, 173, 0.15);
-}
-
-.input-container label {
-  position: absolute;
-  top: 50%;
-  left: 1rem;
-
-  padding: 0 0.4rem;
-
-  color: var(--blue-900);
-  background: var(--gray-400);
-
-  transform: translateY(-50%);
-
-  pointer-events: none;
-
-  transition:
-    top 0.2s ease,
-    font-size 0.2s ease,
-    color 0.2s ease;
-}
-
-.input-container textarea+label {
-  top: 1rem;
-  transform: none;
-}
-
-.input-container input:focus+label,
-.input-container input:not(:placeholder-shown)+label,
-.input-container textarea:focus+label,
-.input-container textarea:not(:placeholder-shown)+label {
-  top: 0;
-
-  color: var(--blue-900);
-
-  font-size: 0.8rem;
-}
-
-.contact .header {
-  margin-bottom: 2rem;
-}
-
-section.contact {
-  color: var(--gray-200);
-  background: var(--gray-800);
 }
 
 section.mentorCarousel {
@@ -459,6 +370,68 @@ section.mentorCarousel {
 
 .cycleMentorCardButtons button img {
   height: 60%;
+}
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.finalSponsorCTA {
+  padding: 7rem 5%;
+
+  background:
+    linear-gradient(135deg,
+      rgba(15, 61, 99, 0.8),
+      rgba(15, 61, 99, 0.25)),
+    var(--gray-900);
+
+  border-top: 1px solid var(--gray-700);
+  text-align: center;
+}
+
+.finalSponsorCTA>div {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.finalSponsorCTA h2 {
+  margin: 0;
+
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+}
+
+.finalSponsorCTA p {
+  margin: 1.5rem auto 2rem;
+
+  color: var(--gray-300);
+  line-height: 1.7;
+}
+
+.finalSponsorCTA a {
+  display: inline-block;
+
+  padding: 1rem 1.5rem;
+
+  border-radius: 0.5rem;
+
+  background: var(--blue-600);
+  color: var(--gray-200);
+
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.finalSponsorCTA .footerButtons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: large;
+}
+
+.finalSponsorCTA .footerButtons a:last-child {
+  background: var(--blue-900);
+  color: var(--gray-200);
 }
 
 @media (max-width: 800px) {

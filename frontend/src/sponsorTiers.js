@@ -40,6 +40,7 @@ const sponsorshipLevels = [
       "Invitations to team events",
       "Special recognition at our banquet",
       '"Proud Supporter of the Ammoknights" graphic for your website and social media',
+      'Logo on our main page sponsor carousel with a link to your business',
     ],
   },
   {

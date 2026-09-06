@@ -5,6 +5,7 @@ import Header from "../components/Header"
 import mentors from "../mentors"
 import { useEffect, useState } from "react"
 import { getAllSponsors } from "../api_calls/get"
+import Footer from "../components/Footer"
 
 export default function App() {
   const { scrollYProgress } = useScroll()
@@ -129,7 +130,7 @@ export default function App() {
 
       <section className="light-blue carousel">
         <div className="reviewCarousel">
-          <h2 className="header">Many thanks to our Sponsers!</h2>
+          <h2 className="header">Many thanks to our Sponsors!</h2>
 
           <div className="carousel-track">
             {/* we need two of the same thing to create the endless track effect */}
@@ -221,47 +222,7 @@ export default function App() {
         </div>
       </section>
 
-      <section className="sectionLight contact">
-        <h2 className="header">Contact Us</h2>
-        <div className="contact-info">
-          <div>
-            <p>Phone: 000-000-0000</p>
-            <p>Email: 000@000.000</p>
-          </div>
-
-          <form>
-            <div className="input-container">
-              <input
-                type="text"
-                placeholder=" "
-                id="name"
-              />
-              <label htmlFor="name">Name</label>
-            </div>
-
-            <div className="input-container">
-              <input
-                type="email"
-                id="email"
-                placeholder=" "
-              />
-              <label htmlFor="email">Email</label>
-            </div>
-
-            <div className="input-container">
-              <textarea
-                id="message"
-                placeholder=" "
-              />
-              <label htmlFor="message">Message</label>
-            </div>
-
-            <button type="submit">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </section>
+      <Footer />
     </>
   )
 }

@@ -1,0 +1,258 @@
+.contactPage {
+  min-height: 100vh;
+  box-sizing: border-box;
+  background:
+    radial-gradient(circle at 50% 0%,
+      rgba(59, 143, 196, 0.14),
+      transparent 45%),
+    var(--gray-600);
+}
+
+.contactHero {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 4rem 0 5rem;
+  text-align: center;
+}
+
+.contactEyebrow,
+.contactLabel {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue-500);
+}
+
+.contactHero h1 {
+  margin: 0.75rem 0 1.25rem;
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: var(--gray-800);
+}
+
+.contactHero p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--gray-800);
+}
+
+/* MAIN */
+
+.contactSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* FORM */
+
+.contactForm {
+  min-width: 500px;
+  flex: 1;
+  padding: 3rem;
+  box-sizing: border-box;
+  border: 0.2rem solid var(--gray-800);
+  border-radius: 1rem;
+  background: var(--blue-700);
+  color: var(--gray-200);
+}
+
+.contactSectionHeader {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--gray-300);
+}
+
+.contactSectionHeader h2 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--gray-200);
+}
+
+
+/* FORM FIELDS */
+
+.contactForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactFormRow {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.contactFormRow label {
+  min-width: 250px;
+  flex: auto;
+}
+
+.contactForm input,
+.contactForm select,
+.contactForm textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0.9rem 1rem;
+
+  border: 2px solid var(--gray-300);
+  border-radius: 0.4rem;
+
+  outline: none;
+  background: var(--gray-400);
+  color: var(--gray-800);
+
+  font: inherit;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contactForm textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.contactForm input::placeholder,
+.contactForm textarea::placeholder {
+  color: var(--gray-800);
+  opacity: 0.55;
+}
+
+.contactForm input:focus,
+.contactForm select:focus,
+.contactForm textarea:focus {
+  border-color: var(--blue-700);
+  box-shadow: 0 0 0 3px rgba(59, 143, 196, 0.2);
+}
+
+
+/* SUBMIT */
+
+.contactForm button {
+  width: 100%;
+  align-self: flex-start;
+  padding: 0.9rem 1.5rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 0.4rem;
+  background: transparent;
+  color: var(--gray-200);
+  font-size: large;
+  transition: 0.2s ease;
+}
+
+.contactForm button:hover {
+  border-color: var(--blue-600);
+  background: var(--blue-600);
+  color: var(--gray-200);
+  transform: translateY(-2px);
+}
+
+
+/* RIGHT SIDE */
+
+.contactDetails {
+  min-width: 300px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactDetail {
+  min-width: 0;
+  padding: 2rem;
+  box-sizing: border-box;
+
+  border: 2px solid var(--gray-800);
+  border-radius: 1rem;
+
+  background: var(--gray-800);
+  color: var(--gray-200);
+}
+
+.contactDetail h3 {
+  margin: 0.6rem 0 0.75rem;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+  color: var(--gray-200);
+}
+
+.contactDetail p {
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+  color: var(--gray-300);
+}
+
+.contactDetail a {
+  color: var(--blue-500);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.contactDetail a:hover {
+  text-decoration: underline;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .contactHero {
+    width: 100%;
+    padding: 3rem 0;
+  }
+
+  .contactHero h1 {
+    font-size: clamp(3.5rem, 17vw, 5rem);
+  }
+
+  .contactHero p {
+    padding: 0 0.5rem;
+    font-size: 1rem;
+  }
+
+  .contactForm {
+    width: 100%;
+    padding: 1.5rem;
+    border-width: 0.15rem;
+  }
+
+  .contactSectionHeader h2 {
+    font-size: 2.5rem;
+  }
+
+  .contactFormRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .contactForm input,
+  .contactForm select,
+  .contactForm textarea {
+    width: 100%;
+  }
+
+  .contactForm button {
+    width: 100%;
+  }
+
+  .contactDetail {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}

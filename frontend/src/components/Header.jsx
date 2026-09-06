@@ -45,7 +45,7 @@ export default function Header({ position = "relative" }) {
       <nav className="nav">
         <Link to="/about">About</Link>
         <Link to="/sponsors/become">Sponsor</Link>
-        {/* <Link to="/contact">Contact</Link> */}
+        <Link to="/contact">Contact</Link>
       </nav>
     </header>
   )

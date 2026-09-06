@@ -1,6 +1,7 @@
 import { Link } from "react-router"
 import Header from "../components/Header"
 import { useEffect } from "react"
+import Footer from "../components/Footer"
 
 export default function About() {
 
@@ -318,27 +319,7 @@ export default function About() {
         </div>
       </section>
 
-
-      {/* JOIN */}
-      <section className="aboutJoin">
-        <div>
-          <span className="aboutEyebrow">READY TO GET INVOLVED?</span>
-          <h2>Want to Join the Ammoknights?</h2>
-          <p>
-            If you are 14–18 years old and enjoy programming, engineering,
-            building, problem solving, competing, social media, planning
-            events, community outreach, graphic design, or media, come join us.
-          </p>
-
-          <div className="aboutJoinButtons">
-            <Link to="/contact">Contact Us</Link>
-            <a href="mailto:first1566ammoknights@gmail.com">
-              Email the Team
-            </a>
-          </div>
-        </div>
-      </section>
-
+      <Footer />
     </main>
   )
 }

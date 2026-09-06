@@ -17,11 +17,11 @@ export default function ViewSponsors() {
       try {
         const res = await getAllSponsors()
 
-        console.log("Sponsors:", res)
-
         if (!res) {
           throw new Error("Sponsor fetch failed")
         }
+
+        console.log("Sponsors fetched:", res)
 
         setSponsors(res)
       } catch (error) {
@@ -40,9 +40,11 @@ export default function ViewSponsors() {
     return Number(numbers[0].replace(/[$,]/g, ""))
   }
 
-  const sortedLevels = [...sponsorshipLevels].sort(
+const sortedLevels = [...sponsorshipLevels]
+  .filter((level) => getLevelAmount(level.amount) >= 1000)
+  .sort(
     (a, b) => getLevelAmount(b.amount) - getLevelAmount(a.amount)
-  )
+  );
 
   return (
     <>
@@ -94,7 +96,7 @@ export default function ViewSponsors() {
               <div className="sponsors">
                 {levelSponsors.map((sponsor) => (
                   <a
-                    href={sponsor.websiteUrl || "#"}
+                    href={sponsor.websiteUrl || undefined}
                     className="sponsor"
                     key={sponsor.id}
                     target="_blank"
