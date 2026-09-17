@@ -3,14 +3,13 @@ import { Link } from "react-router"
 import { useTransform, useScroll } from "framer-motion"
 import Header from "../components/Header"
 import mentors from "../mentors"
-import { useEffect, useState } from "react"
-import { getAllSponsors } from "../api_calls/get"
 import Footer from "../components/Footer"
+import SponsorCarousel from "../components/SponsorCarousel"
+import { useEffect, useState } from "react"
 
 export default function App() {
   const { scrollYProgress } = useScroll()
   const [mentor, setMentor] = useState(0)
-  const [sponsors, setSponsors] = useState(null)
 
   useEffect(() => {
     window.scrollTo({
@@ -18,23 +17,6 @@ export default function App() {
       left: 0,
       behavior: "smooth",
     })
-  }, [])
-
-  useEffect(() => {
-    const load = async () => {
-      try {
-        const res = await getAllSponsors()
-        console.log(res)
-        if (!res) {
-          throw new Error('Sponsor fetch failed')
-        }
-        setSponsors(res)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    load()
   }, [])
 
   const scale = useTransform(
@@ -51,7 +33,7 @@ export default function App() {
 
   return (
     <>
-      <Header position="fixed" />
+      <Header headerIsShown={false} />
       <section className="hero">
 
         <video
@@ -132,40 +114,7 @@ export default function App() {
         <div className="reviewCarousel">
           <h2 className="header">Many thanks to our Sponsors!</h2>
 
-          <div className="carousel-track">
-            {/* we need two of the same thing to create the endless track effect */}
-            {sponsors && sponsors.map((sponsor, i) => (
-              <a
-                href={sponsor.websiteUrl || undefined}
-                key={i}
-                className="sponser"
-                target={sponsor.websiteUrl ? "_blank" : undefined}
-                rel={sponsor.websiteUrl ? "noopener noreferrer" : undefined}
-              >
-                {sponsor.logo ? (
-                  <img height={50} src={sponsor.logo} alt={sponsor.name} />
-                ) : (
-                  <span>{sponsor.name}</span>
-                )}
-              </a>
-            ))}
-
-            {sponsors && sponsors.map((sponsor, i) => (
-              <a
-                href={sponsor.websiteUrl || undefined}
-                key={i}
-                className="sponser"
-                target={sponsor.websiteUrl ? "_blank" : undefined}
-                rel={sponsor.websiteUrl ? "noopener noreferrer" : undefined}
-              >
-                {sponsor.logo ? (
-                  <img height={50} src={sponsor.logo} alt={sponsor.name} />
-                ) : (
-                  <span>{sponsor.name}</span>
-                )}
-              </a>
-            ))}
-          </div>
+          <SponsorCarousel />
           <div className="moreSponserOptions">
             <Link to='/sponsors/view'>View All Sponsors</Link>
             <Link to='/sponsors/become'>Become A Sponsor</Link>

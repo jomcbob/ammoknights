@@ -15,7 +15,7 @@ export default function About() {
 
   return (
     <main className="aboutPage">
-      <Header position="fixed" />
+      <Header headerIsShown={false} />
 
       {/* HERO */}
       <section className="aboutHero">

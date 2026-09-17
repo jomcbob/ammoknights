@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-import { Link } from "react-router";
+import Header from "../components/Header"
+import { Link } from "react-router"
 
 export default function Contact() {
 
@@ -27,7 +27,7 @@ export default function Contact() {
       const data = await response.json()
 
       if (data.success) {
-        alert("Thank you! Your sponsorship offer has been submitted.")
+        alert("Thank you! Your message has been submitted.")
         form.reset()
       } else {
         alert("Something went wrong. Please try again.")
@@ -41,7 +41,7 @@ export default function Contact() {
 
   return (
     <main className="contactPage">
-      <Header position="sticky" />
+      <Header />
 
       <section className="contactSection">
 
@@ -145,5 +145,5 @@ export default function Contact() {
       </section>
 
     </main>
-  );
+  )
 }

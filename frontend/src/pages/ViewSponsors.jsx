@@ -44,7 +44,7 @@ const sortedLevels = [...sponsorshipLevels]
   .filter((level) => getLevelAmount(level.amount) >= 1000)
   .sort(
     (a, b) => getLevelAmount(b.amount) - getLevelAmount(a.amount)
-  );
+  )
 
   return (
     <>

@@ -1,8 +1,8 @@
 import { Link } from "react-router"
 import { useEffect, useState } from "react"
 
-export default function Header({ position = "relative" }) {
-  const [showHeader, setShowHeader] = useState(true)
+export default function Header({ headerIsShown = true }) {
+  const [showHeader, setShowHeader] = useState(headerIsShown)
 
   useEffect(() => {
     let lastScrollY = window.scrollY
@@ -11,8 +11,8 @@ export default function Header({ position = "relative" }) {
       const currentScrollY = window.scrollY
       const scrollDifference = currentScrollY - lastScrollY
 
-      if (currentScrollY <= 75) {
-        setShowHeader(true)
+      if ((currentScrollY <= 75)) {
+        setShowHeader(headerIsShown)
       }
 
       else if (scrollDifference > 75) {
@@ -31,12 +31,11 @@ export default function Header({ position = "relative" }) {
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [])
+  }, [headerIsShown])
 
   return (
     <header
       className={`header ${showHeader ? "headerVisible" : "headerHidden"}`}
-      style={{ position }}
     >
       <Link to="/" className="logo">
         <img src="/logo-light.png" height={50} alt="" />

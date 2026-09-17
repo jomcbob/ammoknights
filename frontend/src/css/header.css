@@ -1,5 +1,5 @@
 header {
-  position: relative;
+  position: fixed;
   top: 1rem;
   margin: 0 5rem;
   padding: 0.9rem 1.5rem;
@@ -11,12 +11,10 @@ header {
   justify-content: space-between;
 
   /* background: rgba(15, 61, 99, 0.92); */
-  background: linear-gradient(
-  135deg,
-  var(--blue-900) 0%,
-  var(--blue-700) 50%,
-  var(--blue-900) 100%
-);
+  background: linear-gradient(135deg,
+      var(--blue-900) 0%,
+      var(--blue-700) 50%,
+      var(--blue-900) 100%);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 1rem;
 
@@ -33,7 +31,11 @@ header {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--gray-100);
-  letter-spacing: 0.03em;
+  height: 75px;
+}
+
+.logo img {
+  height: 75px;
 }
 
 .nav {
@@ -64,14 +66,6 @@ header {
   color: white;
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-1px);
-}
-
-.logo {
-  height: 75px;
-}
-
-.logo img {
-  height: 75px;
 }
 
 @media (max-width: 800px) {
