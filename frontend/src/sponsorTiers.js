@@ -14,6 +14,7 @@ const sponsorshipLevels = [
     description: "Become an important supporter of our team.",
     benefits: [
       "Everything included with Page",
+      "Logo on team website with a link to your business",
       "Social media shout-out",
     ],
   },
@@ -25,7 +26,7 @@ const sponsorshipLevels = [
     benefits: [
       "Everything included with Squire",
       "Listed on team T-shirt",
-      "Logo on team website with a link to your business",
+      "Logo on team banner",
       "Invitation to team banquet",
     ],
   },
@@ -35,7 +36,6 @@ const sponsorshipLevels = [
     description: "Put your business directly alongside our team.",
     benefits: [
       "Everything included with Knight",
-      "Logo on team banner",
       "Logo on our robot",
       "Invitations to team events",
       "Special recognition at our banquet",

@@ -6,6 +6,7 @@ import mentors from "../mentors"
 import Footer from "../components/Footer"
 import SponsorCarousel from "../components/SponsorCarousel"
 import { useEffect, useState } from "react"
+import RobotViewer from "../components/RobotViewer"
 
 export default function App() {
   const { scrollYProgress } = useScroll()
@@ -72,6 +73,10 @@ export default function App() {
           </motion.span>
         </div>
 
+      </section>
+
+      <section>
+        <RobotViewer />
       </section>
 
       {/* About / What We Do */}

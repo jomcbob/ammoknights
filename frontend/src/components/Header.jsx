@@ -1,5 +1,6 @@
 import { Link } from "react-router"
 import { useEffect, useState } from "react"
+import { Menu } from 'lucide-react'
 
 export default function Header({ headerIsShown = true }) {
   const [showHeader, setShowHeader] = useState(headerIsShown)
@@ -13,14 +14,10 @@ export default function Header({ headerIsShown = true }) {
 
       if ((currentScrollY <= 75)) {
         setShowHeader(headerIsShown)
-      }
-
-      else if (scrollDifference > 75) {
+      } else if (scrollDifference > 75) {
         setShowHeader(false)
         lastScrollY = currentScrollY
-      }
-
-      else if (scrollDifference < -50) {
+      } else if (scrollDifference < -50) {
         setShowHeader(true)
         lastScrollY = currentScrollY
       }
@@ -34,18 +31,25 @@ export default function Header({ headerIsShown = true }) {
   }, [headerIsShown])
 
   return (
-    <header
-      className={`header ${showHeader ? "headerVisible" : "headerHidden"}`}
-    >
-      <Link to="/" className="logo">
-        <img src="/logo-light.png" height={50} alt="" />
-      </Link>
+    showHeader ? (
+      <header className="full">
+        <Link to="/" className="logo">
+          <img src="/logo-light.png" height={50} alt="" />
+        </Link>
 
-      <nav className="nav">
-        <Link to="/about">About</Link>
-        <Link to="/sponsors/become">Sponsor</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-    </header>
+        <nav className="nav">
+          <Link to="/about">About</Link>
+          <Link to="/sponsors/become">Sponsor</Link>
+          <Link to="/contact">Contact</Link>
+        </nav>
+      </header>
+    ) : (
+      <header className="hamburger">
+        <Menu
+          size={34}
+          onClick={() => setShowHeader((prev) => !prev)}
+        />
+      </header>
+    )
   )
 }

@@ -2,10 +2,13 @@ import { useEffect, useState } from "react"
 import { getAllSponsors } from "../api_calls/get"
 
 const SponsorTrack = ({ sponsors }) => {
+  if (!sponsors) {
+    return null
+  }
   return sponsors?.map((sponsor, i) => (
     <a href={sponsor.websiteUrl} key={i} className="sponser">
       {sponsor.logo ?
-        <img height={50} src={sponsor.logo} alt={sponsor.name} />
+        <img src={sponsor.logo} alt={sponsor.name} />
         :
         sponsor.name}
     </a>

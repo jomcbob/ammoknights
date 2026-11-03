@@ -41,7 +41,7 @@ export default function ViewSponsors() {
   }
 
 const sortedLevels = [...sponsorshipLevels]
-  .filter((level) => getLevelAmount(level.amount) >= 1000)
+  .filter((level) => getLevelAmount(level.amount) >= 500)
   .sort(
     (a, b) => getLevelAmount(b.amount) - getLevelAmount(a.amount)
   )

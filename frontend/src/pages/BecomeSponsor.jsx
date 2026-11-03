@@ -86,7 +86,7 @@ const BecomeSponsor = () => {
 
           <div className="heroStat">
             <strong>$3,000+</strong>
-            <span>Per additional regional</span>
+            <span>Per additional regional registration</span>
           </div>
 
           <div className="heroStat">
@@ -96,7 +96,7 @@ const BecomeSponsor = () => {
 
           <div className="heroStat">
             <strong>$0</strong>
-            <span>Cost for students</span>
+            <span>Student Cost Goal</span>
           </div>
         </div>
       </section>
