@@ -1,98 +1,27 @@
-/* =========================
-   SPONSOR PAGE
-========================= */
-
 .viewSponsors {
-  min-height: 100vh;
-  padding: 8rem 6rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(59, 143, 196, 0.18),
-      transparent 45%
-    ),
-    var(--gray-300);
+  margin-top: 10rem;
+  padding: 2rem;
 
   box-sizing: border-box;
 }
 
+.sponsorTier {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
 
-/* =========================
-   SPONSOR TIER
-========================= */
+  background-color: var(--blue-600);
 
-.viewSponsors .sponsorTier {
-  max-width: 1400px;
-  margin: 0 auto 5rem;
-  padding: 3rem;
-
-  background:
-    radial-gradient(
-      circle at 50% 30%,
-      rgba(59, 143, 196, 0.15),
-      transparent 60%
-    ),
-    linear-gradient(
-      135deg,
-      var(--gray-200) 0%,
-      var(--gray-300) 50%,
-      var(--gray-200) 100%
-    );
-
-  border: 1px solid rgba(7, 26, 43, 0.12);
   border-radius: 1rem;
-
-  box-shadow:
-    0 15px 40px rgba(7, 26, 43, 0.15);
-
   box-sizing: border-box;
 }
 
-
-/* =========================
-   TIER HEADER
-========================= */
-
-.viewSponsors .sponsorTier h2 {
-  margin: 0;
-
-  color: var(--blue-900);
-
-  text-align: center;
-
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 300;
-}
-
-.viewSponsors .sponsorRange {
-  margin: 0.5rem 0 0;
-
-  color: var(--blue-600);
-
-  text-align: center;
-
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.viewSponsors .sponsorDescription {
-  max-width: 600px;
-  margin: 1rem auto 3rem;
-
-  color: var(--blue-800);
-
-  text-align: center;
-
-  line-height: 1.6;
-}
-
-
-/* =========================
-   SPONSORS
-========================= */
-
-.viewSponsors .sponsors {
+.sponsors {
   display: flex;
   flex-wrap: wrap;
 
@@ -100,214 +29,36 @@
   align-items: stretch;
 
   gap: 2rem;
-}
-
-.viewSponsors .nameLogo {
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  color: var(--blue-900);
-}
-
-
-/* =========================
-   SPONSOR CARD
-========================= */
-
-.viewSponsors .sponsor {
-  width: 300px;
-  min-height: 230px;
-
-  padding: 1.5rem;
+  padding: 2rem;
 
   box-sizing: border-box;
+}
+
+.sponsor {
+  width: 300px;
+  height: 200px;
 
   display: flex;
   flex-direction: column;
-
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  gap: 1rem;
+  padding: 1rem;
 
-  text-decoration: none;
+  background-color: rgba(132, 132, 132, 0.6);
+  color: antiquewhite;
 
-  color: var(--blue-900);
-
-  border: 1px solid rgba(7, 26, 43, 0.15);
   border-radius: 0.75rem;
 
-  box-shadow:
-    0 8px 20px rgba(7, 26, 43, 0.12);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease;
-}
-
-
-/* =========================
-   LOGO
-========================= */
-
-.viewSponsors .sponsorLogo {
-  width: 100%;
-  height: 130px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 1rem 0;
-
   box-sizing: border-box;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--gray-400) 0%,
-      var(--gray-300) 50%,
-      var(--gray-400) 100%
-    );
-
-  border-radius: 0.6rem;
-
-  box-shadow:
-    inset 0 0 0 1px rgba(7, 26, 43, 0.08);
 }
 
-.viewSponsors .sponsorLogo img {
-  display: block;
-
-  width: auto;
-  height: auto;
-
-  max-width: 90%;
-  max-height: 100%;
+.sponsors a img {
+  width: 100%;
+  height: 100%;
+  max-width: 180px;
+  max-height: 120px;
 
   object-fit: contain;
-}
-
-
-/* =========================
-   SPONSOR NAME
-========================= */
-
-.viewSponsors .sponser h3 {
-  margin: 0;
-
-  color: var(--blue-900);
-
-  text-align: center;
-
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-
-/* =========================
-   DONATION
-========================= */
-
-.viewSponsors .sponser .sponsorAmount {
-  color: var(--blue-600);
-
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-
-/* =========================
-   TIER VARIATIONS
-========================= */
-
-.viewSponsors .sponsorTier-title-sponsor {
-  background:
-    radial-gradient(
-      circle at 50% 30%,
-      rgba(59, 143, 196, 0.22),
-      transparent 60%
-    ),
-    linear-gradient(
-      135deg,
-      var(--blue-100, #dbeaf4) 0%,
-      var(--gray-200) 50%,
-      var(--blue-100, #dbeaf4) 100%
-    );
-}
-
-.viewSponsors .sponsorTier-royal {
-  background:
-    radial-gradient(
-      circle at 50% 30%,
-      rgba(59, 143, 196, 0.18),
-      transparent 60%
-    ),
-    linear-gradient(
-      135deg,
-      var(--gray-200) 0%,
-      var(--gray-300) 50%,
-      var(--gray-200) 100%
-    );
-}
-
-.viewSponsors .sponsorTier-baron {
-  background:
-    radial-gradient(
-      circle at 50% 30%,
-      rgba(59, 143, 196, 0.15),
-      transparent 60%
-    ),
-    linear-gradient(
-      135deg,
-      var(--gray-200) 0%,
-      var(--gray-300) 50%,
-      var(--gray-200) 100%
-    );
-}
-
-.viewSponsors .sponsorTier-knight,
-.viewSponsors .sponsorTier-squire,
-.viewSponsors .sponsorTier-page {
-  background:
-    radial-gradient(
-      circle at 50% 30%,
-      rgba(59, 143, 196, 0.1),
-      transparent 60%
-    ),
-    linear-gradient(
-      135deg,
-      var(--gray-100) 0%,
-      var(--gray-300) 50%,
-      var(--gray-100) 100%
-    );
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 800px) {
-
-  .viewSponsors {
-    padding: 6rem 1.5rem 3rem;
-  }
-
-  .viewSponsors .sponsorTier {
-    padding: 2rem 1rem;
-    margin-bottom: 3rem;
-  }
-
-  .viewSponsors .sponsors {
-    gap: 1rem;
-  }
-
-  .viewSponsors .sponser {
-    width: 100%;
-    max-width: 350px;
-  }
+  flex-shrink: 1;
 }

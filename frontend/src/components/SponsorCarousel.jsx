@@ -26,7 +26,10 @@ const SponsorCarousel = () => {
         if (!res) {
           throw new Error('Sponsor fetch failed')
         }
-        setSponsors(res)
+
+        console.log("Sponsors fetched:", res)
+        const correctTier = res.filter(sponsor => sponsor.amountDonated >= 2000)
+        setSponsors(correctTier)
       } catch (error) {
         console.log(error)
       }

@@ -14,6 +14,7 @@ import './css/becomeSponsor.css'
 import './css/about.css'
 import './css/contact.css'
 import "./css/whyBecomeSponsor.css"
+import "./css/dropdown.css"
 
 const router = createBrowserRouter([
   {

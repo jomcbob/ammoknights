@@ -1,6 +1,7 @@
 import { Link } from "react-router"
 import { useEffect, useState } from "react"
 import { Menu } from 'lucide-react'
+import Dropdown from "./Dropdown"
 
 export default function Header({ headerIsShown = true }) {
   const [showHeader, setShowHeader] = useState(headerIsShown)
@@ -38,9 +39,19 @@ export default function Header({ headerIsShown = true }) {
         </Link>
 
         <nav className="nav">
-          <Link to="/about">About</Link>
-          <Link to="/sponsors/become">Sponsor</Link>
-          <Link to="/contact">Contact</Link>
+          <Link className='navLink' to="/about">About</Link>
+          <Dropdown
+            className='navLink'
+            pageSide='center'
+            options={[
+              <Link className="defaultLink" to='/sponsors/view'>View Sponsors</Link>,
+              <Link className="defaultLink" to='/sponsors/become'>Become Sponsor</Link>,
+              <Link className="defaultLink" to='/sponsors/why-become'>View Impact</Link>,
+            ]}
+          >
+            Sponsor
+          </Dropdown>
+          <Link className='navLink' to="/contact">Contact</Link>
         </nav>
       </header>
     ) : (

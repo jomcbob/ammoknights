@@ -1,6 +1,7 @@
 const sponsorshipLevels = [
   {
     name: "Page",
+    color: "#647789",
     amount: "$250–$499",
     description: "Help us keep the Ammoknights growing.",
     benefits: [
@@ -10,6 +11,7 @@ const sponsorshipLevels = [
   },
   {
     name: "Squire",
+    color: "#3B789F",
     amount: "$500–$999",
     description: "Become an important supporter of our team.",
     benefits: [
@@ -20,6 +22,7 @@ const sponsorshipLevels = [
   },
   {
     name: "Knight",
+    color: "#155A8A",
     amount: "$1,000–$1,999",
     description: "Become an official Ammoknights sponsor.",
     featured: true,
@@ -32,6 +35,7 @@ const sponsorshipLevels = [
   },
   {
     name: "Baron",
+    color: "#547B72",
     amount: "$2,000–$4,999",
     description: "Put your business directly alongside our team.",
     benefits: [
@@ -40,11 +44,12 @@ const sponsorshipLevels = [
       "Invitations to team events",
       "Special recognition at our banquet",
       '"Proud Supporter of the Ammoknights" graphic for your website and social media',
-      'Logo on our main page sponsor carousel with a link to your business',
+      "Logo on our main page sponsor carousel with a link to your business",
     ],
   },
   {
     name: "Royal",
+    color: "#75658F",
     amount: "$5,000–$19,999",
     description: "A premium partnership with the Ammoknights.",
     benefits: [
@@ -62,6 +67,7 @@ const sponsorshipLevels = [
   },
   {
     name: "Title Sponsor",
+    color: "#A38D5D",
     amount: "$20,000",
     description: "Become the single Title Sponsor for the season.",
     title: true,
@@ -74,6 +80,6 @@ const sponsorshipLevels = [
       "Unique trophy designed by our CAD team",
     ],
   },
-]
+];
 
 export default sponsorshipLevels

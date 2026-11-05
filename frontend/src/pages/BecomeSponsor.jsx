@@ -116,6 +116,50 @@ const BecomeSponsor = () => {
         </div>
 
         <div className="sponsorLevels">
+          <article className="sponsorCard customDonationCard">
+            <div className="sponsorCardTop">
+              <span className="sponsorRank">♞</span>
+
+              <h3>Custom Donation</h3>
+
+              <strong>Any Amount</strong>
+
+              <p>
+                Every contribution helps! Support our team with a
+                smaller cash donation or an item donation.
+              </p>
+            </div>
+
+            <div className="benefits">
+              <div className="benefit">
+                <span>✓</span>
+                <p>Donate any amount of money</p>
+              </div>
+
+              <div className="benefit">
+                <span>✓</span>
+                <p>Donate equipment, materials, or other items</p>
+              </div>
+
+              <div className="benefit">
+                <span>✓</span>
+                <p>Every contribution makes a difference</p>
+              </div>
+            </div>
+
+            <button
+              className="chooseSponsorButton"
+              onClick={() => {
+                setSelectedLevel("Custom");
+
+                document
+                  .getElementById("sponsor-signup")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Make a Donation
+            </button>
+          </article>
           {sponsorshipLevels.map((level) => (
             <article
               className={`sponsorCard ${level.featured ? "featuredSponsor" : ""
@@ -258,6 +302,8 @@ const BecomeSponsor = () => {
                 required
               >
                 <option value="">Select a sponsorship level</option>
+
+                <option value="Custom">Custom — (Any amount)</option>
 
                 {sponsorshipLevels.map((level) => (
                   <option value={level.name} key={level.name}>

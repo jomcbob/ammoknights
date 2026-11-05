@@ -7,6 +7,11 @@ datasource db {
   provider = "postgresql"
 }
 
+enum DonationType {
+  CASH
+  SERVICE
+}
+
 model Sponsor {
   id            Int      @id @default(autoincrement())
   name          String
@@ -15,6 +20,7 @@ model Sponsor {
   logo          String
   amountDonated Int      @default(0)
   websiteUrl    String   @default("")
+  donationType  DonationType @default(CASH)
 }
 
 model Mentor {

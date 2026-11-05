@@ -50,7 +50,8 @@ header.hamburger {
   gap: 0.5rem;
 }
 
-.nav a {
+.nav > a,
+.nav .dropdownTrigger {
   position: relative;
 
   padding: 0.6rem 0.9rem;
@@ -68,7 +69,8 @@ header.hamburger {
     transform 0.2s ease;
 }
 
-.nav a:hover {
+.nav > a:hover,
+.nav .dropdownTrigger:hover {
   color: white;
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-1px);

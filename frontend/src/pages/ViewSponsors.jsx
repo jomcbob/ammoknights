@@ -79,7 +79,8 @@ const sortedLevels = [...sponsorshipLevels]
           return (
             <div
               key={level.name}
-              className={`sponsorTier sponsorTier-${level.name
+              style={{ backgroundColor: level.color }}
+              className={`sponsorTier ${level.name
                 .toLowerCase()
                 .replace(/\s+/g, "-")}`}
             >
@@ -106,20 +107,19 @@ const sortedLevels = [...sponsorshipLevels]
                       {sponsor.logo ?
                         <img
                           src={sponsor.logo}
-                          alt={`${sponsor.name} logo`}
+                          alt={sponsor.name}
                         />
                         :
-                        <span className="nameLogo">{sponsor.name}</span>
+                        <h2 className="nameLogo">{sponsor.name}</h2>
                       }
                     </div>
 
-                    <h3>{sponsor.name}</h3>
-
                     <span className="sponsorAmount">
-                      $
-                      {Number(
-                        sponsor.amountDonated
-                      ).toLocaleString()}
+                      ${sponsor.amountDonated.toLocaleString()}
+                      {' -- '}
+                      {sponsor.donationType === "SERVICE"
+                        ? "Service"
+                        : "Cash"}
                     </span>
                   </a>
                 ))}

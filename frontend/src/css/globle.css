@@ -189,16 +189,11 @@ section.carousel {
   gap: 2rem;
   width: max-content;
 
-  animation: scrollMotion 25s linear infinite;
+  animation: scrollMotion 8s linear infinite;
 }
 
 .carousel-track:hover {
   animation-play-state: paused;
-}
-
-.sponser {
-  background: var(--gray-200);
-  color: var(--blue-900);
 }
 
 .sponser {
@@ -212,7 +207,7 @@ section.carousel {
   border-radius: 0.5rem;
   font-size: 3rem;
   height: 12rem;
-  max-width: 30rem;
+  max-width: min(30rem, 50vw);
   min-width: 20rem;
   display: flex;
   justify-content: center;
