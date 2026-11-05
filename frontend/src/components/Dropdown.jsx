@@ -7,11 +7,11 @@ const Dropdown = ({ children, options, pageSide }) => {
   return (
     <div
       className="dropdownContainer"
-      // onBlur={(e) => {
-      //   if (!e.currentTarget.contains(e.relatedTarget)) {
-      //     setIsOpen(false)
-      //   }
-      // }}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) {
+          setIsOpen(false)
+        }
+      }}
     >
       <div
         className="dropdownTrigger"
