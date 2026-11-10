@@ -714,8 +714,8 @@
 .formDisclaimer {
   margin: 1rem 0 0;
 
-  color: var(--gray-600);
-  font-size: 0.75rem;
+  color: var(--gray-300);
+  font-size: 0.9rem;
   line-height: 1.5;
   text-align: center;
 }
