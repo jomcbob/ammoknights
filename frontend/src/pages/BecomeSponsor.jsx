@@ -225,11 +225,9 @@ const BecomeSponsor = () => {
             <div className="contactInfo">
               <h3>Sponsor Contact</h3>
               <p>
-                <strong>Anne Kearns</strong>
+                <strong>Team Email</strong>
                 <br />
-                Mentor
-                <br />
-                <a href="tel:8056302692">(805) 630-2692</a>
+                <a href="mailto:First1566Ammoknights@gmail.com">First1566Ammoknights@gmail.com</a>
               </p>
 
               <p className="nonprofitText">
