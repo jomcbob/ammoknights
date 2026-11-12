@@ -336,7 +336,7 @@ const BecomeSponsor = () => {
 
             <p className="formDisclaimer">
               Submitting this form does not process a payment. A team member
-              will send an invoice and W-9 within 24 hours
+              will contact you with the next steps to complete your sponsorship. All donations are tax deductible through the Rocky Mountain Robotics Coalition, a 501(c)(3) organization.
             </p>
           </form>
         </div>
